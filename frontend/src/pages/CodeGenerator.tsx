@@ -26,7 +26,7 @@ const CodeGenerator: React.FC = () => {
 
     setIsGenerating(true);
     try {
-      const response = await axios.post('/api/v1/code/generate', {
+      const response = await axios.post(`${process.env.REACT_APP_API_URL || 'http://localhost:8000'}/api/v1/code/generate`, {
         description: description,
         framework: framework
       });
